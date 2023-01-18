@@ -58,7 +58,7 @@ RUN echo Defaults:$USERNAME !authenticate >> /etc/sudoers
 # Run setup bash script as the user.
 USER $USERNAME
 # RUN ./riptide_setup/setup.bash
-RUN touch if_this_file_is_here_copy_from_image_worked
+# RUN touch if_this_file_is_here_copy_from_image_worked
 
 RUN ./riptide_setup/setup.bash
 # RUN mkdir ./test

@@ -51,15 +51,16 @@ RUN apt-get update && apt-get install -y lsb-release
 # COPY setup.bash /home/$USERNAME/osu-uwrt/
 
 # RUN chmod +x riptide_setup/setup.bash
-RUN chmod +x test.bash
+# RUN chmod +x test.bash
 
 # As root, give the user temporary ability to run sudo without a password. This is necessary so that sudo commands in setup.bash can run correctly without a terminal for the user to be prompted.
 RUN echo Defaults:$USERNAME !authenticate >> /etc/sudoers
 # Run setup bash script as the user.
 USER $USERNAME
 # RUN ./riptide_setup/setup.bash
-RUN touch poopy
-# RUN ./test.bash
+RUN touch if_this_file_is_here_copy_from_image_worked
+
+RUN ./riptide_setup/setup.bash
 # RUN mkdir ./test
 # Switch to root. Remove the user's ability to run sudo without a password. Switch back to the user.
 USER root

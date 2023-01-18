@@ -1,0 +1,11 @@
+services:
+  riptide-container:
+    # image: :latest
+    environment:
+      - TIMEZONE=America/New_York
+      - ENV_VAR2=value2
+    volumes:
+      - /path/on/host:/path/in/container
+      - /path/on/host2:/path/in/container2
+    ports:
+      # - "80:80"
